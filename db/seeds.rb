@@ -4,4 +4,12 @@
 # Examples:
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+
+
+  create_topics = for i in 1..10 do
+    Topic.create!([title: Faker::GameOfThrones.character , description: Faker::Movie.quote  ])
+    # 怎么把vote的随机数字加到seed里还没想到
+    # Vote.create!([ Faker::Number.number(2)])
+  end
+  puts "10 Topic created."
